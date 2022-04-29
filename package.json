@@ -1,0 +1,36 @@
+{
+  "name": "zetrix-encryption-nodejs",
+  "version": "1.0.0",
+  "description": "zetrix-encryption",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "zetrix",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "is-type-of": "^1.2.0",
+    "sjcl": "^1.0.7"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "zetrix",
+    "zetrix-encryption"
+  ],
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
