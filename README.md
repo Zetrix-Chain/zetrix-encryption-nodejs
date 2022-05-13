@@ -1,8 +1,6 @@
 zetrix-encryption-nodejs
 =======
 
-zetrix-encryption Sub module of [zetrix-sdk-nodejs]().
-
 ## zetrix-encryption-nodejs  Installation
 ```
 npm install zetrix-encryption-nodejs --save
