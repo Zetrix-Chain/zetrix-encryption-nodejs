@@ -79,7 +79,7 @@ describe('Test hpchain-encryption', function() {
   });
 
   it('test: checkAddress', function() {
-    var result = KeyPair.checkAddress('ZTX3SzrfC6o9g9UBFMsxEBfqYrpfQZbtSgwVi');
+    var result = KeyPair.checkAddress('ZTX3LbdzVjSX4odGarj7Zbn5Kmoyy8ua893ar');
     result.should.equal(true);
   });
 

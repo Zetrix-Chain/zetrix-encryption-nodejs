@@ -9,9 +9,11 @@
     "author": "zetrix",
     "license": "ISC",
     "dependencies": {
+        "@asanrom/dilithium": "^1.0.4",
         "crypto-js": "^4.2.0",
         "is-type-of": "^1.2.0",
-        "sjcl": "^1.0.7"
+        "sjcl": "^1.0.7",
+        "sm-crypto": "^0.3.13"
     },
     "directories": {
         "lib": "lib",
