@@ -140,7 +140,7 @@ var ALGO_SPECS = [
     pubKeyLen:      null,   // large hex — just check it's a non-empty string
     addrLen:        37,
     addrPrefix:     'ZTX4',
-    sigLen:         6586,   // 3293B * 2 hex chars
+    sigLen:         6618,   // 3309B * 2 hex chars (ML-DSA-65 FIPS 204)
   },
   {
     signType:       'hybrid',
@@ -148,7 +148,7 @@ var ALGO_SPECS = [
     pubKeyLen:      null,
     addrLen:        37,
     addrPrefix:     'ZTX5',
-    sigLen:         6714,   // (64+3293)B * 2 hex chars = 3357B * 2
+    sigLen:         6746,   // (64+3309)B * 2 hex chars = 3373B * 2 (ML-DSA-65 FIPS 204)
   },
 ];
 
