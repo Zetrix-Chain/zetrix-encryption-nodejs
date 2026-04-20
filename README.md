@@ -66,6 +66,27 @@ keystore.encrypt(encPrivateKey, 'test', function(encData) {
 
 ```
 
+## Supported algorithms
+
+Pass one of the following strings to `new KeyPair(signType)` or `KeyPair.getKeyPair(signType)`:
+
+| `signType`   | Sign-type byte | Address-type byte | Address prefix |
+|--------------|----------------|-------------------|----------------|
+| `ed25519` (default) | `0x01` | `0x01` | `ZTX3` |
+| `sm2`               | `0x02` | `0x02` | `ZTX3` |
+| `dilithium3`        | `0x05` | `0x04` | `ZTX4` |
+| `hybrid` (ED25519 + Dilithium3) | `0x06` | `0x06` | `ZTX5` |
+
+### Notes on the Dilithium3 variant
+
+The bundled Dilithium3 implementation (`lib/vendor/dilithium3-fips204/`) uses FIPS 204 / ML-DSA-65 parameter sizes (private key 4032 B, public key 1952 B, signature 3309 B) but **omits the FIPS 204 message-domain-separation prefix**. Signatures produced by this library are interoperable with the deployed Zetrix blockchain but are **not interoperable with spec-compliant ML-DSA-65 verifiers**.
+
+The sign-type byte (`0x05`) and address-type byte (`0x04`) intentionally differ for Dilithium3. The mismatch preserves a stable `ZTX4` address prefix while keeping the `0x04` sign-type slot reserved (it was previously used for CFCA and is no longer valid — see `lib/constants.js`).
+
+### Hybrid mode
+
+`hybrid` keys sign twice (ED25519 + Dilithium3) and verification requires **both** signatures to pass. This provides defence-in-depth: classical forgery requires breaking ED25519, and post-quantum forgery requires breaking Dilithium3.
+
 ## License
 
 [MIT](LICENSE)
