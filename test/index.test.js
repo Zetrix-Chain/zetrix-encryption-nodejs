@@ -113,10 +113,8 @@ describe('Backward compatibility', function() {
 // Parameterized suites — one per algorithm
 // ---------------------------------------------------------------------------
 
-// Key/sig sizes derived from actual library output.
-// DIL3_PRIV_LEN=4016, DIL3_PUB_LEN=1952 per @asanrom/dilithium (NIST final spec, CRHBYTES=48).
-// NOTE: Zetrix blockchain uses an older Dilithium3 variant (CRHBYTES=32, privKey=4000B).
-//       Chain compatibility requires a library matching the blockchain variant.
+// Key/sig sizes per FIPS 204 / ML-DSA-65 (CRHBYTES=64, vendored dilithium3-fips204).
+// DIL3_PRIV_LEN=4032, DIL3_PUB_LEN=1952, sig=3309B — matches deployed Zetrix blockchain.
 var ALGO_SPECS = [
   {
     signType:       'ed25519',
